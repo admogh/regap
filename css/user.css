@@ -1,0 +1,239 @@
+/**
+ * CSS 
+ *
+ * @author	rabbits <rbtsgm at gmail.com>
+ * @package	Regap1
+ */
+
+#contents {
+	margin: 8px;
+}
+
+* html #contents {
+	margin-top: -10px;
+	margin-left: 8px;
+}
+
+#action-menu {
+	//margin-left: 16px;
+	margin-bottom: 8px;
+}
+
+#action-menu ul {
+	float: left;
+        list-style-image: none;
+        list-style-position: outside;
+        list-style-type: none;
+        margin: 0.2em -2.0em; 
+}
+
+* html #action-menu ul {
+        margin: 0.2em -0.2em;
+}
+
+#action-menu li {
+	float: left;
+        margin-right: 15px;
+}
+
+#action-menu-upload, #action-menu-password-change {
+	padding: 3px 0px 0px 1px;
+}
+
+#check-action-menu {
+	margin-left: 4px;
+	margin-bottom: 8px;
+	padding-top: 33px;
+}
+
+#check-action-menu ul {
+	float: left;
+        list-style-image: none;
+        list-style-position: outside;
+        list-style-type: none;
+        margin: 0.4em -2.0em; 
+}
+
+* html #check-action-menu ul {
+	margin: 0.4em -12em;
+}
+
+#check-action-menu li {
+	float: left;
+        margin-right: 15px;
+}
+
+#check-action-menu li input {
+	padding: -1px 0px 0px 8px;
+	font-weight: bold;
+}
+
+#check-action-menu-head {
+	font-style: italic;
+	font-size: 14px;
+}
+
+* html #check-action-menu-head {
+	padding-top: 5px;
+}
+
+#action-menu-change, #check-action-menu-delete {
+	margin: -4px 0px 2px 0px;
+}
+
+* html #action-menu-change {
+	margin-top: 0px;
+ 	margin-bottom: 20px;
+}
+
+* html #check-action-menu-delete {
+	margin-top: 0px;
+	margin-left: 0px;
+	padding-left: 0px;
+	margin-bottom: 20px;
+}
+
+#contents-list {
+	margin-top: 3px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#contents-list td.name {
+	width: 100%;
+}
+
+#contents-list td.name a, #contents-list td.name span {
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+}
+
+#contents-list tr td span.expander {
+	background-image: url(../img/expander_normal.png);
+	cursor: pointer;
+	margin-left: 2px;
+	padding-left: 6px;
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+}
+
+#contents-list tr td span.expanded {
+	background-image: url(../img/expander_open.png);
+	padding-left: 10px;
+	margin-left: 0px;
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+}
+
+#contents-list tr td.path ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0.0em -3.0em;
+}
+
+* html #contents-list tr td.path ul {
+	margin: 0.0em 0.0em;
+}
+
+#contents-list tr input {
+	vertical-align: middle;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+
+/*
+#contents-list tr span.check {
+	display: block;
+	padding 1px 0 1px 16px;
+}
+*/
+
+#contents-list td.name a.dir {
+	background-image: url(../img/folder.png);
+}
+
+#contents-list td.name a.file {
+	background-image: url(../img/file.png);
+}
+
+th.db, th.file {
+	white-space: nowrap;
+}
+
+td.name img {
+	vertical-align: middle;
+	border-style: none;
+	padding: 2px 0px;
+	margin-left: -8px;
+}
+
+#contents-list td.name div {
+	white-space: pre;
+}
+
+#contents-list td.name a {
+	border-bottom: medium none;
+}
+
+#contents-list td span.loading {
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	background-image: url(../img/loading.gif);
+	color: #aaaaaa;
+	font-weight: bold;
+}
+
+table.listing {
+	border-bottom: 1px solid;
+	border-collapse: collapse;
+	border-spacing: 0;
+	clear: both;
+	width: 99%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th.check {
+	padding: 1 2 3 4;
+}
+
+th.check, td.check {
+	text-align: center;
+	padding: 4px 0px 1px 0px;
+}
+
+th.id, th.action {
+	text-align: left;	
+	padding: 4px 0px 1px 5px;
+}
+
+* html td.action {
+	word-break:break-all;
+}
+
+table.listing thead th {
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 12px;
+	background: #ddffdd;
+}
+
+table.listing tbody td, table.listing tbody th {
+	border: 1px solid #888888;
+	padding: 0.3em 0.5em;
+	vertical-align: middle;
+	font-size: 13px;
+}
+
+/*
+table.listing tbody tr:hover {
+	background: #dddddd !important;
+}
+*/
+

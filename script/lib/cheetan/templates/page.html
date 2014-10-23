@@ -1,0 +1,73 @@
+<?php require_once("common/doctype.html"); ?>
+<html>
+<head>
+<?php require_once("common/common_head.html"); ?>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<script type="text/javascript" src="js/expand_dir.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+</head>
+<body>
+<?php require_once("common/header.html"); ?>
+<hr>
+
+<?php require_once("common/status.html"); ?>
+
+<div id="contents">
+
+<form method="POST" action="index.php">
+<input type="hidden" name="path" value="<?php print($data['path']); ?>">
+<input type="hidden" name="token" value="<?php print(get_token()); ?>">
+
+<div id="page-contents-path">
+<?php print($data['path_link']); ?>
+</div>
+
+<div id="page-contents">
+<div id="page-menu">
+	<ul>
+		<li>
+<?php
+		print('<a href="' . get_action_link('page_edit') . '&path=' . $data['path']  . '" id="page-menu-edit">' . REGAP_STRING_LOGIN_PAGE_MENU_EDIT . '</a>');
+		print('<select name="template">');
+		foreach($data['template'] as $val) {
+			print('<option value="' . $val['template_path'] . '">' . $val['template_name'] . '</option>');
+		}
+		print('</select>');
+?>
+		</li>
+	</ul>
+</div>
+
+		<div id="page-contents-action">
+		<ul>
+			<li><input type="submit" name="page_release" value="<?php print(REGAP_STRING_PAGE_RELEASE_VALUE); ?>"></li>
+			<li><input type="submit" name="page_delete" value="<?php print(REGAP_STRING_PAGE_DELETE_VALUE); ?>"></li>
+			<li><input type="submit" name="page_remove" value="<?php print(REGAP_STRING_PAGE_REMOVE_VALUE); ?>"></li>
+			<li style="margin-right:5px">&nbsp;</li>
+			<li><input type="button" id="all-select-field-value" value="<?php print(REGAP_STRING_PAGE_ALL_SELECT_VALUE); ?>"></li>
+			<li><input type="button" id="all-reset-field-value" value="<?php print(REGAP_STRING_PAGE_ALL_RESET_VALUE); ?>"></li>
+		</ul>
+		</div>
+
+		<?php
+			if (!empty($data['list'])) {
+				$list = '<table class="listing" id="page-contents-list">';
+				$list .= '<thead><tr>';
+				$list .= '<th class="name">'.REGAP_STRING_PAGE_LIST_HEAD_PATH.'</th>';
+				$list .= '<th class="db" title="' . REGAP_STRING_PAGE_LIST_HEAD_DB_TITLE  . '">'.REGAP_STRING_PAGE_LIST_HEAD_DB.'</th>';
+				$list .= '<th class="file" title="' . REGAP_STRING_PAGE_LIST_HEAD_FILE_TITLE . '">'.REGAP_STRING_PAGE_LIST_HEAD_FILE.'</th>';
+				$list .= '</tr></thead>'."\n";
+				$list .= '<tbody>';
+				print($list);
+				include("page_list.html");
+				$list = '</tbody></table>';
+				print($list);
+			}
+		?>
+</div>
+</form>
+</div>
+
+<?php require_once('common/footer.html'); ?>
+</body>
+</html>

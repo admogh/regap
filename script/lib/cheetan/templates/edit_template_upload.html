@@ -1,0 +1,35 @@
+<?php require_once("common/doctype.html"); ?>
+<html>
+<head>
+<?php require_once("common/common_head.html"); ?>
+<link rel="stylesheet" type="text/css" href="css/edit_template_upload.css">
+<script type="text/javascript" src="js/edit_template_upload.js"></script>
+</head>
+<body>
+<?php require_once("common/status.html"); ?>
+    <div><form name="upload" method="post" enctype="multipart/form-data"  action="<?php print(get_action_link('edit_template_upload_upload')); ?>">
+        <input type="hidden" name="token" value="<?php print(get_token()); ?>">
+	<input type="hidden" name="MAX_FILE_SIZE" SIZE="<?php print(get_upload_max_filesize()); ?>">
+	<?php
+/*	
+<input type="hidden" name="directory" value="">
+<input type="hidden" name="header" value="">
+<input type="hidden" name="subject" value="">
+<input type="hidden" name="body" value="">
+*/
+?>
+	<table>
+		<tr><td class="field-info-item"><?php print(REGAP_STRING_EDIT_TEMPLATE_UPLOAD_TEMPLATE_PATH.":"); ?></td></tr>
+		<tr><td><input type="text" name="dest" size="42" value="/"></td></tr>
+		<tr><td class="field-info-item"><?php print(REGAP_STRING_UPLOAD_FILE_SRC_ITEM.":"); ?></td></tr>
+		<tr><td><input name="user_file" type="file" size="42"></td></tr>
+		<tr><td class="field-info-item"><?php print(REGAP_STRING_EDIT_TEMPLATE_UPLOAD_TEMPLATE_NAME.":"); ?></td></tr>
+		<tr><td><input type="text" name="name" size="42" value=""></td></tr>
+        	<tr><td><input type="submit" value="<?php print(REGAP_STRING_TEMPLATE_UPLOAD_SUBMIT_VALUE); ?>"></td></tr>
+	</table>
+        </form></div>
+
+<?php require_once('common/footer.html'); ?>
+</body>
+</html>
+

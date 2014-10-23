@@ -1,0 +1,16 @@
+<?php
+$list = "";
+$i = 0;
+if (count($data['paths'])) {
+	$list .= "<ul>";
+	foreach($data['paths'] as $val) {
+		$list .= "<li>";
+		$list .= $val["path"];
+		$list .= "</li>";
+	}
+	$list .= "</ul>";
+}
+print($list);
+?>
+
+

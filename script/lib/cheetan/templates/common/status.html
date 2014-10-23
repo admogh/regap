@@ -1,0 +1,22 @@
+<?php
+if (!empty($data["status"])) {
+foreach($data["status"] as $val){
+	switch ($val["kind"]) {
+		case REGAP_STATUS_KIND_SUCCESS:
+			print('<p class="status_success">' . $val["message"] . '</p>');
+			break;
+		case REGAP_STATUS_KIND_WARNING:
+			print('<p class="status_warning">' . $val["message"] . '</p>');
+			break;
+		case REGAP_STATUS_KIND_FAIL:
+			print('<p class="status_fail">' . $val["message"] . '</p>');
+			break;
+		case REGAP_STATUS_KIND_INFO:
+			print('<p class="status_info">' . $val["message"] . '</p>');
+			break;
+		default:
+			break;
+	}
+}
+}
+?>

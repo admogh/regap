@@ -1,0 +1,28 @@
+<div id="header">
+	<div id="logo">
+		<h1><a href="./"><img src="img/logo.gif" alt="Regap" style="border-style:none"/></a></h1>
+	</div>
+	<div id="nav">
+		<ul>
+			<li><?php print(sprintf(REGAP_STRING_LOGIN_NAV_ID,$data['id'])); ?></li>
+			<li><a href="<?php print(get_action_link('logout')); ?>"><?php print(REGAP_STRING_LOGIN_NAV_LOGOUT); ?></a></li>
+		</ul>
+	</div>
+	<div id="menu">
+		<ul>
+			<?php
+				for($i=0;$i<REGAP_LOGIN_MENU_NUM;$i++) {
+					$li = '<li><a href="';
+					$li .= get_action_link($GLOBALS['g_arrDefineLoginMenu'][$i]) . '">';
+					$li .= "<b>" . $GLOBALS['g_arrStringLoginMenu'][$i] . "</b></a></li>";
+					print($li);
+				}
+			?>
+		</ul>
+	</div>
+	<div id="subject">
+		<h1><?php print($data["subject"]); ?></h1>
+	</div>
+</div>
+
+

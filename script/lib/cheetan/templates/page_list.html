@@ -1,0 +1,53 @@
+<?php
+$list = "";
+$i = 0;
+foreach($data['list'] as $val) {
+	// path
+	if ($val['db_dir'] || $val['dir']) {	
+		$list .= '<tr id="f'.$i++.'">';
+		$list .= "<td class='name'>";
+//		$list .= "<span class='expander'></span>";
+		$list .= '<a class="dir" href="'.get_action_link('page').'&path='.$val['path'].'/">'.$val['path']."</a>";
+	}
+	else if ($val['db_file']) {
+		$list .= '<tr>';
+		$list .= "<td class='name'>";
+//		$list .= '<span class="expander"></span>';
+		$list .= '<input type="checkbox" name="check[]" value="' . $val['path'] . '">';
+		$list .= '<a class="file" href="'.get_action_link('page_edit').'&path='.$val['path'].'">'.$val['path']."</a>";
+	}
+	else if ($val['file']) {
+		$list .= '<tr>';
+		$list .= "<td class='name'>";
+		$list .= '<input type="checkbox" name="check[]" value="' . $val['path'] . '">';
+		$list .= '<a class="file" target="_blank" href="'.$val['link'].'">'.$val['path']."</a>";
+	}
+
+	$list .= "</td>";
+	// db(need)
+	$list .= "<td class='parts-check-icon'>";
+	if ($val['db_dir']) {
+		$list .= '<a href="'.get_action_link('page').'&path='.$val['path'].'/">';
+		$list .= '<img src="img/checkmark_db.gif" title="'.REGAP_STRING_PAGE_LIST_HEAD_DB_TITLE.'">';
+		$list .= '</a>';
+	}
+	else if ($val['db_file']) {
+		$list .= '<a href="'.get_action_link('page_edit').'&path='.$val['path'].'">';
+		$list .= '<img src="img/checkmark_db.gif" title="'.REGAP_STRING_PAGE_LIST_HEAD_DB_TITLE.'">';
+		$list .= '</a>';
+	}
+	$list .= "</td>";
+	// file(need)
+	$list .= "<td class='parts-check-icon'>";
+	if ($val['dir'] || $val['file']) {
+		$list .= '<a target="_blank" href="'.$val['link'].'">';
+		$list .= '<img src="img/checkmark_file.gif" title="'.REGAP_STRING_PAGE_LIST_HEAD_FILE_TITLE.'">';
+		$list .= '</a>';
+	}
+	$list .= "</td>";
+	$list .= "</tr>\n";
+}
+print($list);
+?>
+
+

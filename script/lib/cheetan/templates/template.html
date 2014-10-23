@@ -1,0 +1,75 @@
+<?php require_once("common/doctype.html"); ?>
+<html>
+<head>
+<?php require_once("common/common_head.html"); ?>
+<link rel="stylesheet" type="text/css" href="css/template.css">
+<script type="text/javascript" src="js/template.js"></script>
+</head>
+<body>
+<?php require_once("common/header.html"); ?>
+<hr>
+
+<?php require_once("common/status.html"); ?>
+
+<div id="contents">
+<form method="POST" action="index.php">
+<input type="hidden" name="token" value="<?php print(get_token()); ?>">
+<div id="action-menu">
+<ul>
+	<li id="action-menu-upload"><?php print('<a href="'.get_action_link('template_upload').'">'.REGAP_STRING_TEMPLATE_MENU_UPLOAD.'</a>'); ?></li>
+	<li id="action-menu-change"><?php print('<input type="submit" value="'.REGAP_STRING_TEMPLATE_MENU_CHANGE_VALUE.'" name="template_change">'); ?></li>
+</ul>
+</div>
+<div id="check-action-menu">
+<ul>
+	<li id="check-action-menu-head"><?php print(REGAP_STRING_TEMPLATE_MENU_CHECK.":"); ?></li>
+	<li id="check-action-menu-delete"><?php print('<input type="submit" value="'.REGAP_STRING_TEMPLATE_MENU_CHECK_DELETE_VALUE.'" name="template_delete">'); ?></li>
+</ul>
+</div>
+<div id="list">
+	<?php
+		if(!empty($data['list'])) {
+			$list = '<table class="listing" id="contents-list">';
+			$list .= '<thead><tr>';
+			$list .= '<th id="contents-list-head-check" class="check"><input type="checkbox"></th>';
+			$list .= '<th class="template_id">'.REGAP_STRING_TEMPLATE_LIST_HEAD_ID.'</th>';
+			$list .= '<th class="template_path">'.REGAP_STRING_TEMPLATE_LIST_HEAD_TEMPLATE_PATH.'</th>';
+			$list .= '<th class="template_name">'.REGAP_STRING_TEMPLATE_LIST_HEAD_TEMPLATE_NAME.'</th>';
+			$list .= '<th class="edit_template_path">'.REGAP_STRING_TEMPLATE_LIST_HEAD_EDIT_TEMPLATE_PATH.'</th>';
+			$list .= '<th class="edit_template_name">'.REGAP_STRING_TEMPLATE_LIST_HEAD_EDIT_TEMPLATE_NAME.'</th>';
+			$list .= '<th class="path">'.REGAP_STRING_TEMPLATE_LIST_HEAD_PATH.'</th>';
+			$list .= '</tr></thead>';
+			$list .= '<tbody>';
+			foreach($data['list'] as $val) {	
+				$list .= '<tr>';
+				$list .= '<td class="check"><input type="checkbox" name="check['.$val["template_id"].']" value="'.$val["template_path"].'"></td>';
+				$list .= '<td class="template_id">'.$val["template_id"].'</td>';
+				$list .= '<td class="template_path">'.$val["template_path"].'</td>';
+				$list .= '<td class="template_name"><input type="text" size="'.REGAP_TEMPLATE_TEMPLATE_NAME_SIZE.'" name="template['.$val["template_id"].'][template_name]" value="'.$val["template_name"].'"></td>';
+				$list .= '<td class="edit_template_path"><select name="template['.$val["template_id"].'][edit_template_id]">';
+				foreach($data['edit_template'] as $val2) {
+					if ($val2["edit_template_id"] == $val["edit_template_id"]) {
+						$list .= '<option value="'.$val2["edit_template_id"].'" selected>'.$val2["edit_template_path"].'</option>';	
+					}
+					else {
+						$list .= '<option value="'.$val2["edit_template_id"].'">'.$val2["edit_template_path"].'</option>';
+					}
+				}
+				$list .= '</select></td>';
+				$list .= '<td class="edit_template_name">'.$val["edit_template_name"].'</td>';
+				$list .= '<td class="path"><span class="expander" title="'.REGAP_STRING_TEMPLATE_LIST_EXPAND.'">&nbsp;</span></td>';
+				$list .= '</tr>';	
+			}
+			$list .= '</tbody></table>';
+			print($list);
+		}
+	?>
+</div>
+
+</form>
+</div>
+
+<?php require_once('common/footer.html'); ?>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Regap readme</title>
+<link rel="stylesheet" type="text/css" href="./css/template.css">
+<style type="text/css"><!--
+P.subject               {font-size:14pt;font-weight:bold;font-family:'MS UI Gothic'; }
+P.introduction  {font-size:12pt;font-family:'MS UI Gothic'; }
+P.contents              {font-size:12pt;font-family:'MS UI Gothic';letter-spacing:1px; }
+P.warning               {text-align:right;font-size:12pt;font-family:'MS UI Gothic'; }
+h2{
+	font-size: medium;
+	color: #444444;
+	background-color: #EEEEEE;
+	padding-right: 10;
+	border-bottom-width: 1;
+	border-bottom-color: #AAAAAA;
+	border-bottom-style: solid;
+}
+h2.diff{
+	font-size: medium;
+	color: #444444;
+	background-color: #CCCCFF;
+	padding-right: 10;
+	border-bottom-width: 1;
+	border-bottom-color: #AAAAAA;
+	border-bottom-style: solid;
+}
+div.source {
+	border:solid;
+	border-color:#000000;
+	border-width:1px;
+	background-color: #CCCCFF;
+	padding:4px;
+}
+--></style>
+</head>
+
+<body class="regap">
+
+<p class="subject">Regap 1.1.0 スタートガイド</p>
+<hr>
+<p class="contents">
+<h2 class="diff">前版からの変更点</h2><ul>
+<li>フック機能（プレアクション、ポストアクション）を追加。</li>
+<li>get_contents&nbsp;関数を、エスケープ対象文字列を指定できるように変更。</li>
+</ul><center><hr></center><h2>Regapについて</h2>
+Regap（レガップ）は簡単に素早くWebページを作成・管理するための簡易的なCMSです。<br>
+MovableTypeやWordPressのようにサーバにインストールするタイプのソフトウェアです。<br>
+MySQLやPostgreSQLなどのデータベースと連携して、（静的な）ページを作成します。
+<h2>動作環境</h2>
+Regapは以下の環境で動作を確認しています。
+<ul>
+<li>サーバ側</li>
+<ul>
+<li>OS：Debian GNU/Linux 4.0</li>
+<li>Webサーバ：Apache 2.2.3</li>
+<li>PHP：PHP 5.2.0</li>
+<li>データベース：PostgreSQL 7.4.23, MySQL Ver 14.12 Distrib 5.0.32</li>
+</ul>
+<li>クライアント側</li>
+<ul>
+<li>OS：Windows2000 Service Pack 4</li>
+<li>ブラウザ：FireFox 3.0.11, Internet Explorer 6.0.2800.1106</li>
+</ul>
+</ul>
+<h2>導入手順</h2>
+<ul>
+<li>展開した場所に存在する tmp, regap_config.php, js, script/templates, script/lib/cheetan/templates/edit の所有者をWebサーバを実行するユーザに変更します。</li>
+<li>静的ファイルを出力するディレクトリを作成し、所有者をWebサーバを実行するユーザに変更します。</li>
+<li>初期構築時にテーブルを作成するため、事前にデータベース（及び接続ユーザ）を作成します。</li>
+<li>展開した場所に存在する<a href="./install.php"> install.php </a>にブラウザからアクセスし、全ての項目を入力して確認後に"作成"ボタンを押します。</li>
+<li>特に問題がなければ、データベーステーブルの作成、設定ファイルの生成が成功したことを表すメッセージが表示されます（必要がなければ、この時点で"install.php", "regap_init.php"を削除してもよいかもしれません）。</li>
+<li><a href="./index.php">管理画面</a>にログインして、Webページの作成を行います。</li>
+</ul>
+<h2>ライセンスについて</h2>
+RegapはPHPフレームワークである<a href="http://php.cheetan.net/" target="_blank">ちいたん</a>、PHPライブラリであるJsphon、及びJavaScriptライブラリである<a href="http://jquery.com/">jQuery</a>を使用して作られており、これらのモジュールを含めて配布しています。また、JavaScriptの実装については、一部<a href="http://trac.edgewall.org/">Trac</a>を参考にしています。<br>
+ちいたんについては、配布されているデフォルトのソースをカスタマイズして利用しています。<br>
+ちいたんのライセンスはMITライセンスで配布されており、JsphonのライセンスはPHPライセンス、jQueryのライセンスはMITライセンスになります。<br>
+<br>
+Regap自体のライセンスはnew&nbsp;BSDスタイルのライセンスとして配布します。詳しくは同梱されている&nbsp;<a href="LICENSE">LICENSE</a>&nbsp;をご覧下さい。<br>
+<h2>その他</h2>
+より詳細な情報については、<a href="http://rbts.no-ip.info/trac/regap1/">こちら</a>をご覧下さい。<br>
+また、Regapに関する意見、コメント、バグの情報などに関しては rbtsgm at gmail.com までご連絡ください！
+</p>
+
+<p class="warning">
+Last update:2009-7-26<br>
+This page copyright (C) rabbits. All rights reserved.<br>Powered&nbsp;by&nbsp;<a href="http://rbts.no-ip.info/trac/regap1/" target="_blank">Regap</a>&nbsp;by&nbsp;<a href="http://stbr.no-ip.org/" target="_blank">rabbits&nbsp;software</a>
+</p>
+</body>
+</html>

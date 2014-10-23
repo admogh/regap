@@ -1,0 +1,18 @@
+/** 
+ * CSS For Regap Install
+ *
+ * @author	rabbits <rbtsgm at gmail.com>
+ * @package	Regap1
+ */
+
+@import "common.css";
+
+// h1
+h1#success {
+	color: #55bb55;
+}
+h1#fail {
+	color: #ff0000;
+}
+
+

@@ -1,0 +1,124 @@
+/** 
+ * CSS For edit template
+ *
+ * @author	rabbits <rbtsgm at gmail.com>
+ * @package	Regap1
+ */
+
+fieldset {
+	border: 2px solid #cccccc;
+	margin-bottom: 20px;
+}
+
+div#info-field {
+	margin-top: -18px;
+	margin-bottom: 20px;
+}
+
+div#submit-field {
+	align: left;
+	margin: 5px 120px 20px 0px;
+        border: 2px solid #666666;
+}
+
+#submit-field td {
+	padding: 0px 10px;
+}
+
+#submit-field input {
+	font-weight: bold;
+}
+
+
+.field-title {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.field-inner {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+#submit-field div.field-inner {
+	margin: 10px;
+}
+
+#edit-main-content td.field-info-item {
+	font-weight: bold;
+	font-size: 15px;
+	width: 100px;
+}
+
+#edit-related-content td.field-info-item {
+	font-weight: bold;
+	font-size: 15px;
+	padding-right: 10px;
+	width: 150px;
+}
+
+#info-field-value {
+	font-weight: bold;
+	margin-left: 45px;
+}
+
+td.field-info-edit-icon {
+	padding: 0px;
+	width: 100px;
+}
+
+.parts-edit-icon img {
+	border-style:none;
+}
+
+#content {
+	width: 1040px;
+}
+
+* html #content {
+ 	zoom: 1;
+	margin-left: 15px;
+}
+
+#edit-main-content {
+	float: left;
+	clear: left;
+	overflow: hidden;
+	width: 640px;
+	margin-top: 10px;
+	//z-index: 1;
+}
+
+#contents-field {
+	//margin-right: 425px;
+	//z-index 1;
+}
+
+#contents-field div.field-inner {
+	margin: 5px;
+}
+
+#fileupload-field div.field-inner {
+	margin: 5px;
+}
+
+#fileupload-submit {
+	margin: 10px 0px 3px 0px;
+	font-weight: bold;
+}
+
+#edit-related-content {
+	margin-top: 14px;
+	margin-left: 30px;
+	width: 340px;
+	float: left;
+	//z-index: 2;
+}
+
+#fileupload-field {
+	//z-index: 3;
+}
+
+#template-field {
+}
+

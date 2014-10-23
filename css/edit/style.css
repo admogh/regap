@@ -1,0 +1,13 @@
+/**
+ * CSS For Regap
+ *
+ * edit template
+ *
+ * @author	rabbits <rbtsgm at gmail.com>
+ * @package	Regap1
+ */
+
+#contents-field div textarea {
+	width:600px;
+	height:280px;
+}

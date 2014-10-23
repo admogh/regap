@@ -1,0 +1,30 @@
+<?php require_once("common/doctype.html"); ?>
+<html>
+<head>
+<?php require_once("common/common_head.html"); ?>
+</head>
+<body>
+<h1><img src="img/logo_transparent.gif" alt="Regap" style="border-style:none"/></h1>
+<h1><?php print(REGAP_STRING_INDEX_SUBJECT); ?></h1>
+<hr>
+<?php require_once("common/status.html"); ?>
+
+<form action="<?php print(get_action_link('login')); ?>" method="POST">
+<table>
+<tr>
+<td><?php print(REGAP_STRING_INDEX_ID); ?></td>
+<td><input type="text" name="id"></td>
+</tr>
+<tr>
+<td><?php print(REGAP_STRING_INDEX_PASSWORD); ?></td>
+<td><input type="password" name="password"></td>
+</tr>
+</table>
+<p>
+<input type="submit" value="<?php print(REGAP_STRING_INDEX_LOGIN); ?>">
+</p>
+</form>
+
+<?php require_once('common/footer.html'); ?>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?php require_once("common/doctype.html"); ?>
+<html>
+<head>
+<?php require_once("common/common_head.html"); ?>
+<link rel="stylesheet" type="text/css" href="css/home.css">
+<script type="text/javascript" src="js/home.js"></script>
+</head>
+<body>
+<?php require_once("common/header.html"); ?>
+<hr>
+
+<?php require_once("common/status.html"); ?>
+
+<div id="contents">
+<?php print(sprintf(REGAP_STRING_HOME_HELLO,$data['id'])); ?><br>
+<ul>
+<?php foreach($data['home_menu'] as $val) print($val); ?>
+</ul>
+</div>
+
+<?php require_once('common/footer.html'); ?>
+</body>
+</html>

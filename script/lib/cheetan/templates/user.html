@@ -1,0 +1,72 @@
+<?php require_once("common/doctype.html"); ?>
+<html>
+<head>
+<?php require_once("common/common_head.html"); ?>
+<link rel="stylesheet" type="text/css" href="css/user.css">
+<script type="text/javascript" src="js/user.js"></script>
+</head>
+<body>
+<?php require_once("common/header.html"); ?>
+<hr>
+
+<?php require_once("common/status.html"); ?>
+
+<div id="contents">
+<form method="POST" action="index.php">
+<input type="hidden" name="token" value="<?php print(get_token()); ?>">
+<div id="action-menu">
+<ul>
+	<li id="action-menu-upload"><?php print('<a href="'.get_action_link('user_add').'">'.REGAP_STRING_TEMPLATE_MENU_UPLOAD.'</a>'); ?></li>
+	<li id="action-menu-password-change"><?php print('<a href="'.get_action_link('user_password').'">'.REGAP_STRING_USER_LIST_WORK_PASSWORD.'</a>'); ?></li>
+</ul>
+</div>
+<div id="check-action-menu">
+<ul>
+	<li id="action-menu-change"><?php print('<input type="submit" value="'.REGAP_STRING_TEMPLATE_MENU_CHANGE_VALUE.'" name="user_change">'); ?></li>
+	<li id="check-action-menu-head"><?php print(REGAP_STRING_TEMPLATE_MENU_CHECK.":"); ?></li>
+	<li id="check-action-menu-delete"><?php print('<input type="submit" value="'.REGAP_STRING_TEMPLATE_MENU_CHECK_DELETE_VALUE.'" name="user_delete">'); ?></li>
+</ul>
+</div>
+<div id="list">
+	<?php
+		if(!empty($data['list'])) {
+			$list = '<table class="listing" id="contents-list">';
+			$list .= '<thead><tr>';
+			$list .= '<th id="contents-list-head-check" class="check"><input type="checkbox"></th>';
+			$list .= '<th class="id">'.REGAP_STRING_USER_LIST_HEAD_ID.'</th>';
+			$list .= '<th class="action">'.REGAP_STRING_USER_LIST_HEAD_ACTION.'</th>';
+			$list .= '</tr></thead>';
+			$list .= '<tbody>';
+			foreach($data['list'] as $val) {	
+				$list .= '<tr>';
+				$list .= '<td class="check"><input type="checkbox" name="check['.$val["id"].']" value="'.$val["name"].'"></td>';
+				$list .= '<td class="id">'.$val["name"].'</td>';
+				$list .= '<td class="action">';
+				foreach($data['action'] as $bit => $action) {
+					$list .= $action . ":";
+					if ( $val["level"] & (1 << $bit) ) {
+						$list .= '<input type="checkbox" name="manage['.$val["id"].']['.$bit.']" value="1" checked>';
+					}
+					else {
+						$list .= '<input type="checkbox" name="manage['.$val["id"].']['.$bit.']" value="1">';
+					}
+					$list .= "&nbsp;";
+				}
+				$list .= '</td>';
+				$list .= '</tr>';	
+			}
+			$list .= '</tbody></table>';
+			print($list);
+		}
+	?>
+</div>
+
+
+
+</form>
+</div>
+
+<?php require_once('common/footer.html'); ?>
+</body>
+</html>
+

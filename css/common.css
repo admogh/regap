@@ -1,0 +1,93 @@
+/**
+ * CSS For Regap
+ *
+ * @author	rabbits <rbtsgm at gmail.com>
+ * @package	Regap1
+ */
+
+h1 {
+	font-size: 24px;
+}
+
+P.status_success        {text-indent:1em;background-color: #99ff99;}
+P.status_warning        {font-weight:bold;text-indent:1em;background-color: #ffff66;}
+P.status_fail           {font-weight:bold;text-indent:1em;background-color: #ff9999;}
+P.status_info           {text-indent:1em;background-color: #ccccff;}
+
+a {
+	color: #777755;
+}
+
+#nav {
+	align: right;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+#nav ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0.2em 0;
+}
+
+#nav li {
+	float: left;
+	margin: 0px 5px;
+}
+
+#menu {
+	height: 35px;
+	display: block;
+	margin-top: -5px;
+}
+
+#menu ul {
+	float: left;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0.2em -2.4em;
+}
+
+* html #menu ul {
+ 	margin-left: -0.2em;
+}
+
+#menu li {
+	float: left;
+	margin: 0px 5px;
+	font-size: 15px;
+}
+
+#menu li a:hover {
+	text-decoration: none;
+	background-color: #bbbbbb;
+}
+
+#subject {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 5px;
+	padding-right: 20px;
+	text-align: left;
+	margin-top: -10px;
+}
+
+#content {
+	overflow: hidden;
+	margin: 0px auto 0px auto;
+	z-index: 1;
+}
+/* IE 6 */
+* html #content {
+	zoom: 1;
+}
+
+#footer {
+	font-size: 15px;
+	text-align: right;
+	margin-top: 10px;
+}
+
